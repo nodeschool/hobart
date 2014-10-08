@@ -1,0 +1,99 @@
+::-moz-selection {
+  background: #FFEB00;
+}
+
+::selection {
+  background: #FFEB00;
+}
+
+html {
+  background: url(../images/background.jpg) no-repeat bottom center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  background-color: #FFEB00;
+}
+
+body {
+  font-family: Source Sans Pro;
+  color: #333;
+  min-height: 100%;
+}
+
+a {
+  color: #333;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  border-top: 10px solid #333;
+  text-align: center;
+}
+
+header img {
+  width: 300px;
+}
+
+header span{
+  display: block;
+}
+
+article {
+  padding: 1em;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: .5em;
+}
+
+footer {
+  text-shadow: 2px 2px #333;
+  font-size: .8em;
+}
+
+footer,
+footer a,
+footer a:hover {
+  color: #ddd;
+}
+
+.button,
+.tito-submit {
+  background: transparent;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 6px 8px;
+  margin-right: 10px;
+  border: 2px solid #333;
+  border-radius: 3px;
+  text-decoration: none;
+  letter-spacing: .1em;
+}
+
+.button:hover,
+.tito-submit:hover {
+  color: #F7DA03;
+  background: #333;
+}
+
+#tito-submit,
+#tito-releases label,
+#tito-releases .tito-ticket-price {
+  display: none;
+}
+
+#tito-releases {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

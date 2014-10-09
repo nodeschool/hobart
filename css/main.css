@@ -31,26 +31,36 @@ a:hover {
 }
 
 header {
+  width: 100%;
+  position: absolute;
+  top: 0;
   border-top: 10px solid #333;
   text-align: center;
 }
 
 header img {
-  width: 300px;
+  width: 200px;
 }
 
 header span{
-  display: block;
+  display: none;
 }
 
 article {
-  padding: 1em;
+  padding: 5em 1em 1em;
+  margin-top: 160px;
+  margin-bottom: 2em;
   text-align: center;
   background: rgba(255,255,255,0.85);
 }
 
+article h2 span {
+  font-size: 2em;
+  display: block;
+}
+
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   padding: .5em;

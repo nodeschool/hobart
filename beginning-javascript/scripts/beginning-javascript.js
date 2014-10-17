@@ -43831,8 +43831,10 @@ module.exports = React.createClass({
     displayName: "LessonPanel",
 
     componentDidUpdate: function() {
-      this.getDOMNode().style.overflow = "hidden";
-      this.getDOMNode().style.overflow = null;
+      var el = this.getDOMNode();
+      el.style.cssText += ';-webkit-transform:rotateZ(0deg)'
+      el.offsetHeight
+      el.style.cssText += ';-webkit-transform:none'
     },
 
     render: function() {

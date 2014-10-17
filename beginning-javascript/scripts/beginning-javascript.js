@@ -43632,21 +43632,27 @@ module.exports = {
   title: "Objects",
   steps: [
     {
-      problem: "In JavaScript, everying is considered an \"object.\" Objects are *things* that have `properties`.\n\nYou've already learned about Strings, strings are objects and have properties too, they have properties that help you manipulate the data in those strings. For instance, there is a function on strings that will turn that string in to upper case, sort of like the string was written in ALL CAPS.\n\n```javascript\nvar stringVariable = \"It's a stringy world.\"\nvar upperCaseVariable = stringVariable.toUpperCase()\n```\n\nOr, you could write the same thing this way:\n\n```javascript\nvar upperCaseVariable = \"It's a stringy world.\".toUpperCase()\n```\n\nFor this lesson, print the variable you created in the previous lesson in UpperCase using the string object's `.toUpperCase()` method.",
+      problem: "In JavaScript, everying is considered an \"object.\" Objects are *things* that have `properties`.\n\nYou've already learned about Strings, strings are objects and have properties too, they have properties that help you manipulate the data in those strings. For instance, there is a function on strings that will turn that string in to upper case, sort of like the string was written in ALL CAPS.\n\n```javascript\nvar stringVariable = \"It's a stringy world.\"\nvar upperCaseVariable = stringVariable.toUpperCase()\n```\n\nTake your `myString` variable from the last lesson and output it the console, using `.toUpperCase()`.\n\n```javascript\nconsole.log(myString.toUpperCase());\n```\n",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
-          return cLine === "\"It's a stringy world.\"".toUpperCase();
+          return cLine === "\"MY GREAT STRING\"".toUpperCase();
         });
       },
       solution: "Right on!"
     }, {
-      problem: "So, everything is an object, that means you should be able to create new objects with nothing but what you would like to have in them :)\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject.property)\n```\n\nYou may not have noticed, but you've been using an object this whole time: `console`. The `log()` function is actually a property of the console object which you access using the \"dot syntax.\" You can access properties of any object using like this.\n\nYou can also access properties using another syntax with brackets.\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject[\"property\"])\n```\n\nThis syntax takes a string as the property which is very useful because when property names have spaces or special characters that we can't access them using the \"dot syntax.\" For instance, we can create an object like this:\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\n```\n\nIf we were to try and access that property using the \"dot syntax\" we would get a synax error. This also means we can use variables with strings to access properties.\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\nvar name = \"my property\"\nconsole.log(myObject[name])\n```\n\nFor this lesson, create a new object with a property that contains the string from your previous lesson, `\"It's a stringy world.\".toUpperCase()`, as the value and print that string to the console using `console.log()` on the next line.",
+      problem: "So, everything is an object, that means you should be able to create new objects with nothing but what you would like to have in them :)\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n};\n```\n\nTry creating the object above, and then log out its string using:\n\n```javascript\nconsole.log(myObject.property);\n```",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
-          return cLine === "\"It's a stringy world.\"".toUpperCase();
+          return cLine === "\"Just another string.\"";
         });
       },
-      solution: "Right on!"
+      solution: "Great!"
+    }, {
+      problem: "You may not have noticed, but you've been using an object this whole time: `console`. The `log()` function is actually a property of the console object which you access using the \"dot syntax.\" You can access properties of any object using like this.\n\nYou can also access properties using another syntax with brackets.\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject[\"property\"])\n```\n\nThis syntax takes a string as the property which is very useful because when property names have spaces or special characters that we can't access them using the \"dot syntax.\" For instance, we can create an object like this:\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\n```\n\nIf we were to try and access that property using the \"dot syntax\" we would get a syntax error. This also means we can use variables with strings to access properties.\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\nvar name = \"my property\"\nconsole.log(myObject[name])\n```\n\nFor this lesson, create a new object with a property that contains the string from your previous lesson, `\"It's a stringy world.\".toUpperCase()`, as the value and print that string to the console using `console.log()` on the next line.",
+      test: function(repl, cons) {
+        return true;
+      },
+      solution: "Let's move onto functions."
     }
   ]
 };
@@ -43782,6 +43788,7 @@ module.exports = React.createClass({
     componentDidUpdate: function(prevP, prevS) {
       var consoleOut = Parser.getConsoleOutput(this.state.code);
       var replOut = Parser.getParsedLines(this.state.code);
+      localStorage.setItem("savedCode", this.state.code);
 
       var steps = this.state.completedSteps.concat();
       var newComps = 0;

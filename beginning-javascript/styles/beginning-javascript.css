@@ -448,12 +448,16 @@ pre .hljs {
 .lesson-panel {
   float: left;
   width: 30%;
-  background: lightblue;
+  background: #eee;
+  border-right: 3px solid black;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 .work-panel {
   float: right;
   width: 70%;
-  background: lightgreen;
+  background: #eee;
+  box-sizing: border-box;
 }
 html,
 body {
@@ -480,6 +484,9 @@ html,
   height: 50%;
   width: 50%;
   float: left;
+  box-sizing: border-box;
+  overflow: hidden;
+  scroll: auto;
 }
 .worksheet-code .cm-s-default {
   height: 100%;
@@ -492,23 +499,32 @@ html,
   padding: 4px 0 0;
   overflow: scroll;
   float: right;
-  font-size: 13px;
-  line-height: 13px;
+  font-size: 12px;
+  line-height: 12px;
   background: white;
   color: #555;
+  box-sizing: border-box;
 }
 .worksheet-results__line {
   margin: 0;
   padding: 0;
-  height: 13px;
+  height: 12px;
 }
 .worksheet-results__line.is-error {
   color: red;
 }
 .output {
-  max-height: 100%;
+  height: 50%;
   clear: both;
-  overflow: scroll;
+  overflow: auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  border-top: 3px solid black;
+}
+.output pre {
+  margin: 0;
 }
 .lesson__count {
   margin-left: 0.5rem;
@@ -519,7 +535,7 @@ html,
 }
 .lesson-steps {
   list-style: none;
-  padding: 0.5rem;
+  padding: 0;
 }
 .lesson-step__problem,
 .lesson-step__solution {

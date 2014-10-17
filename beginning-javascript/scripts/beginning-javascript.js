@@ -43546,11 +43546,11 @@ module.exports = {
   title: "Arrays",
   steps: [
     {
-      problem: "I've mentioned these a few times but let's spend a minute learning about them. Imagine you need to keep track of all your buddies. Well, an Array will do just fine. Think of an Array like a sorted list that you can keep tons of stuff in.\n\nThis is how you make an array:\n\n```javascript\n  var myCatFriends = [\"tommy\", \"tabby\", \"ceiling\"]\n```\n\nSweet! Now you have a list of cat buddies.\n\nElements (that is what you call a single item in an array) that are stored within arrays start at 0 and count up from there. So `myCatFriends[0]` returns `\"tommy\"` and `myCatFriends[1]` returns `\"tabby\"`... etc etc.\n\nTo get buddies out of your brand new Array you can just access an element directly like so:\n\n```javascript\n  console.log(myCatFriends[0])\n```\n\nIf you made a brand new cat friend at the hippest cat club the other night and you want to add them to your list it is super simple: myCatFriends.push(\"super hip cat\").\n\nTo check that the new cat made it into your array you can use .length\n\n```javascript\n  console.log(myCatFriends[1])\n```\n\nAlso, when you use `.push()` it will return you the new length of the Array. Handy! Also take note that arrays will always preserve ordering which means they will remember the order in which you added or defined things. Not everything in JavaScript preserves ordering so remember this special property of Arrays!\n\nFor this lesson create a new empty array at the top of your file from the last lesson. Now, instead of printing \"IT'S A STRINGY WORLD.\" push the string \"IT'S A STRINGY WORLD.\" to the array and `console.log()` the length of the array. Finally, make sure that you call this function twice.",
+      problem: "I've mentioned these a few times but let's spend a minute learning about them. Imagine you need to keep track of all your buddies. Well, an Array will do just fine. Think of an Array like a sorted list that you can keep tons of stuff in.\n\nThis is how you make an array:\n\n```javascript\n  var myCatFriends = [\"tommy\", \"tabby\", \"ceiling\"]\n```\n\nSweet! Now you have a list of cat buddies.\n\nElements (that is what you call a single item in an array) that are stored within arrays start at 0 and count up from there. So `myCatFriends[0]` returns `\"tommy\"` and `myCatFriends[1]` returns `\"tabby\"`... etc etc.\n\nTo get buddies out of your brand new Array you can just access an element directly like so:\n\n```javascript\n  console.log(myCatFriends[0])\n```\n\nIf you made a brand new cat friend at the hippest cat club the other night and you want to add them to your list it is super simple: `myCatFriends.push(\"fluffy\")`.\n\nTo check that the new cat made it into your array you can use `.length`\n\n```javascript\n  console.log(myCatFriends.length)\n```\n\nAlso, when you use `.push()` it will return you the new length of the Array. Handy! Also take note that arrays will always preserve ordering which means they will remember the order in which you added or defined things. Not everything in JavaScript preserves ordering so remember this special property of Arrays!\n\nFor this lesson create a new array with one element at the top of the page. `console.log()` the length of array BEFORE doing anything to it. Now push the string `\"tabby\"` to the array and then `console.log()` the length of the array again.",
       test: function(repl, cons) {
         return cons.join() === "1,2";
       },
-      solution: "Right on!"
+      solution: "# Wicked sticks!\n\nYou've passed this lesson!"
     }
   ]
 };
@@ -43588,13 +43588,13 @@ module.exports = {
   title: "Hello World!",
   steps: [
     {
-      problem: "Welcome to JavaScript, you're gonna love it :)\n\nThe first thing you should learn is how to print things. Printing things is the best way to debug your programs and learn what might be going on. In JavaScript you can use `console.log` to print *almost* anything.\n\nUsing the worksheet copy or manually type the following code in to it:\n\n```javascript\nconsole.log(\"Hello World!\")\n```\n ",
+      problem: "Welcome to JavaScript, you're gonna love it :)\n\nThis is a space for learning how JavaScript works. On the right you have your worksheet on the top, and your worksheet's output on the bottom.\n\nThe first thing you should learn is how to print things. Printing things is the best way to debug your programs and learn what might be going on. In JavaScript you can use `console.log` to print *almost* anything.\n\nUsing the worksheet, copy or manually type the following code in to it:\n\n```javascript\nconsole.log(\"Hello World!\");\n```\n ",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
           return cLine === "\"Hello World!\"";
         });
       },
-      solution: "Right on!"
+      solution: "## That's it!\n\nWhen you're building real programs, `console.log` is a great way to see what's actually going on inside it.\n\nClick 'back' and then go to the next lesson."
     }
   ]
 };
@@ -43632,21 +43632,27 @@ module.exports = {
   title: "Objects",
   steps: [
     {
-      problem: "In JavaScript, everying is considered an \"object.\" Objects are *things* that have `properties`.\n\nYou've already learned about Strings, strings are objects and have properties too, they have properties that help you manipulate the data in those strings. For instance, there is a function on strings that will turn that string in to upper case, sort of like the string was written in ALL CAPS.\n\n```javascript\nvar stringVariable = \"It's a stringy world.\"\nvar upperCaseVariable = stringVariable.toUpperCase()\n```\n\nOr, you could write the same thing this way:\n\n```javascript\nvar upperCaseVariable = \"It's a stringy world.\".toUpperCase()\n```\n\nFor this lesson, print the variable you created in the previous lesson in UpperCase using the string object's `.toUpperCase()` method.",
+      problem: "In JavaScript, everying is considered an \"object.\" Objects are *things* that have `properties`.\n\nYou've already learned about Strings, strings are objects and have properties too, they have properties that help you manipulate the data in those strings. For instance, there is a function on strings that will turn that string in to upper case, sort of like the string was written in ALL CAPS.\n\n```javascript\nvar stringVariable = \"It's a stringy world.\"\nvar upperCaseVariable = stringVariable.toUpperCase()\n```\n\nTake your `myString` variable from the last lesson and output it the console, using `.toUpperCase()`.\n\n```javascript\nconsole.log(myString.toUpperCase());\n```\n",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
-          return cLine === "\"It's a stringy world.\"".toUpperCase();
+          return cLine === "\"MY GREAT STRING\"".toUpperCase();
         });
       },
       solution: "Right on!"
     }, {
-      problem: "So, everything is an object, that means you should be able to create new objects with nothing but what you would like to have in them :)\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject.property)\n```\n\nYou may not have noticed, but you've been using an object this whole time: `console`. The `log()` function is actually a property of the console object which you access using the \"dot syntax.\" You can access properties of any object using like this.\n\nYou can also access properties using another syntax with brackets.\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject[\"property\"])\n```\n\nThis syntax takes a string as the property which is very useful because when property names have spaces or special characters that we can't access them using the \"dot syntax.\" For instance, we can create an object like this:\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\n```\n\nIf we were to try and access that property using the \"dot syntax\" we would get a synax error. This also means we can use variables with strings to access properties.\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\nvar name = \"my property\"\nconsole.log(myObject[name])\n```\n\nFor this lesson, create a new object with a property that contains the string from your previous lesson, `\"It's a stringy world.\".toUpperCase()`, as the value and print that string to the console using `console.log()` on the next line.",
+      problem: "So, everything is an object, that means you should be able to create new objects with nothing but what you would like to have in them :)\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n};\n```\n\nTry creating the object above, and then log out its string using:\n\n```javascript\nconsole.log(myObject.property);\n```",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
-          return cLine === "\"It's a stringy world.\"".toUpperCase();
+          return cLine === "\"Just another string.\"";
         });
       },
-      solution: "Right on!"
+      solution: "Great!"
+    }, {
+      problem: "You may not have noticed, but you've been using an object this whole time: `console`. The `log()` function is actually a property of the console object which you access using the \"dot syntax.\" You can access properties of any object using like this.\n\nYou can also access properties using another syntax with brackets.\n\n```javascript\nvar myObject = { \n  property: \"Just another string.\"\n}\nconsole.log(myObject[\"property\"])\n```\n\nThis syntax takes a string as the property which is very useful because when property names have spaces or special characters that we can't access them using the \"dot syntax.\" For instance, we can create an object like this:\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\n```\n\nIf we were to try and access that property using the \"dot syntax\" we would get a syntax error. This also means we can use variables with strings to access properties.\n\n```javascript\nvar myObject = {\n  \"my property\": \"Just another string.\"\n}\nvar name = \"my property\"\nconsole.log(myObject[name])\n```\n\nFor this lesson, create a new object with a property that contains the string from your previous lesson, `\"It's a stringy world.\".toUpperCase()`, as the value and print that string to the console using `console.log()` on the next line.",
+      test: function(repl, cons) {
+        return true;
+      },
+      solution: "Let's move onto functions."
     }
   ]
 };
@@ -43662,13 +43668,23 @@ module.exports = {
   title: "Strings",
   steps: [
     {
-      problem: "In JavaScript a bunch of letters, numbers, words or anything else is known as a **String** (as in a string of characters). Strings have to begin AND end with a quotation mark. Single `'` or double `\"` is fine, just make sure you use the same type of quote at the beginning as you do at the end. This can make using *the other* type of quotes in a sentence much easier. For instance:\n\n```javascript\n\"It's a stringy world.\"\n```\n\nFor this lesson, change the `console.log()` you did in the last lesson to print `\"It's a stringify world.\"`.",
+      problem: "In JavaScript a bunch of letters, numbers, words or anything else is known as a **String** (as in a string of characters). Strings have to begin AND end with a quotation mark. Single `'` or double `\"` is fine, just make sure you use the same type of quote at the beginning as you do at the end. This can make using *the other* type of quotes in a sentence much easier. For instance:\n\n```javascript\n\"It's a stringy world.\"\n```\n\nMake a variable called `myString` with the string `\"My Great String\"`.",
       test: function(repl, cons) {
-        return cons.some(function(cLine) {
-          return cLine === "\"It's a stringify world.\"";
+        return repl.some(function(line) {
+          return line.type === "VariableDeclaration" && line.text === "myString = \"My Great String\"";
         });
       },
-      solution: "Right on!"
+      solution: "## Yeah, that's it."
+    }, {
+      problem: "You can also add strings together. Make another variable called `myOtherString` with the string `\"Another Great String\"`.\n\nThen add them together on the console:\n\n```javascript\nconsole.log(myString + myOtherString);\n```",
+      test: function(repl, cons) {
+        return (repl.some(function(line) {
+          return line.type === "VariableDeclaration" && line.text === "myOtherString = \"Another Great String\"";
+        })) && (cons.some(function(cLine) {
+          return cLine === "\"My Great StringAnother Great String\"";
+        }));
+      },
+      solution: "## Great!\n\nLet's move onto objects in the next lesson."
     }
   ]
 };
@@ -43684,13 +43700,21 @@ module.exports = {
   title: "Values and Variables",
   steps: [
     {
-      problem: "Values are the simplest components in JavaScript. 1 is a value, true is a value, \"hello\" is a value, function() {} is a value, the list goes on, and don't worry, we'll exlpore more of those values later. :)\n\nTo store values we use things called variables. The word 'variable' means 'can change' and is used because variables can store many different types of values and can change their value many times. They are pretty much like mailboxes. We put something in a variable, like our sentence, and then give the variable an address that we can use to look up the sentence later. In real life mailboxes have to have PO Box numbers but in JavaScript you usually just use lowercase letters or numbers without any spaces.\n\n```javascript\nvar myVariable = \"It's a stringy world.\"\n```\n\nvar is shorthand for variable and the = means store the thing on the right-hand side in the thing on the left-hand side.\n\nYou can now use this variable anywhere you can use a value, like in the `console.log()` prints we've done previously. So, we could easily write somethin like:\n\n```javascript\nvar stringVariable = \"I like to play with strings!\"\nconsole.log(stringVariable)\n```\n\nAnd this will print `I like to play with strings!`.\n\nFor this lesson, take the string from your prior less, `\"It's a stringify world.\"`, and assign it to a variable. Then, on the next line, print the string using your new variable.",
+      problem: "Values are the simplest components in JavaScript. `1` is a **Number** value, `true` is a **Boolean** value, `\"hello\"` is a **String** value, the list goes on, and don't worry, we'll explore more of those values later. :)\n\n\nTo store values we use things called variables. The word 'variable' means 'can change' and is used because variables can store many different types of values and can change their value many times. They are pretty much like mailboxes. We put something in a variable, like a sentence, and then give the variable an address that we can use to look up the sentence later. In real life mailboxes have to have PO Box numbers but in JavaScript you usually just use lowercase letters or numbers without any spaces.\n\n```javascript\nvar myVariable = \"It's a stringy world.\";\n```\n\nTry typing that out now in your worksheet.",
       test: function(repl, cons) {
-        return cons.some(function(cLine) {
-          return cLine === "\"It's a stringify world.\"";
+        return repl.some(function(line) {
+          return line.type === "VariableDeclaration" && line.text === "myVariable = \"It's a stringy world.\"";
         });
       },
-      solution: "Right on!"
+      solution: "## That's it."
+    }, {
+      problem: "Now you can access that variable by it's name. Try outputting it to the console using:\n\n```javascript\nconsole.log(myVariable);\n```",
+      test: function(repl, cons) {
+        return cons.some(function(cLine) {
+          return cLine === "\"It's a stringy world.\"";
+        });
+      },
+      solution: "## Great!\n\nMove on to the next step to learn more about string values."
     }
   ]
 };
@@ -43764,6 +43788,7 @@ module.exports = React.createClass({
     componentDidUpdate: function(prevP, prevS) {
       var consoleOut = Parser.getConsoleOutput(this.state.code);
       var replOut = Parser.getParsedLines(this.state.code);
+      localStorage.setItem("savedCode", this.state.code);
 
       var steps = this.state.completedSteps.concat();
       var newComps = 0;
@@ -43821,6 +43846,13 @@ var _ = require("lodash");
 
 module.exports = React.createClass({
     displayName: "LessonPanel",
+
+    componentDidUpdate: function() {
+      var el = this.getDOMNode();
+      el.style.cssText += ';-webkit-transform:rotateZ(0deg)'
+      el.offsetHeight
+      el.style.cssText += ';-webkit-transform:none'
+    },
 
     render: function() {
       var _this = this;
@@ -44192,7 +44224,8 @@ var Arrays = require("../lessons/arrays.coffee");
 var Next = require("../lessons/next-steps.coffee");
 
 React.renderComponent(AppContainer({
-  "lessons": [HelloWorld, Strings, Variables, Objects, Functions, Arrays, Next]
+  "lessons": [
+    HelloWorld, Variables, Strings, Objects, Functions, Arrays, Next]
 }), homeNode);
 
 

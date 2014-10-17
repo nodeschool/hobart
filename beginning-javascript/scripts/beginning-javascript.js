@@ -43588,7 +43588,7 @@ module.exports = {
   title: "Hello World!",
   steps: [
     {
-      problem: "Welcome to JavaScript, you're gonna love it :)\n\nThis is a space for learning how Javascript works. On the right you have your worksheet on the top, and your worksheet's output on the bottom.\n\nThe first thing you should learn is how to print things. Printing things is the best way to debug your programs and learn what might be going on. In JavaScript you can use `console.log` to print *almost* anything.\n\nUsing the worksheet, copy or manually type the following code in to it:\n\n```javascript\nconsole.log(\"Hello World!\");\n```\n ",
+      problem: "Welcome to JavaScript, you're gonna love it :)\n\nThis is a space for learning how JavaScript works. On the right you have your worksheet on the top, and your worksheet's output on the bottom.\n\nThe first thing you should learn is how to print things. Printing things is the best way to debug your programs and learn what might be going on. In JavaScript you can use `console.log` to print *almost* anything.\n\nUsing the worksheet, copy or manually type the following code in to it:\n\n```javascript\nconsole.log(\"Hello World!\");\n```\n ",
       test: function(repl, cons) {
         return cons.some(function(cLine) {
           return cLine === "\"Hello World!\"";
@@ -43662,13 +43662,23 @@ module.exports = {
   title: "Strings",
   steps: [
     {
-      problem: "In JavaScript a bunch of letters, numbers, words or anything else is known as a **String** (as in a string of characters). Strings have to begin AND end with a quotation mark. Single `'` or double `\"` is fine, just make sure you use the same type of quote at the beginning as you do at the end. This can make using *the other* type of quotes in a sentence much easier. For instance:\n\n```javascript\n\"It's a stringy world.\"\n```",
+      problem: "In JavaScript a bunch of letters, numbers, words or anything else is known as a **String** (as in a string of characters). Strings have to begin AND end with a quotation mark. Single `'` or double `\"` is fine, just make sure you use the same type of quote at the beginning as you do at the end. This can make using *the other* type of quotes in a sentence much easier. For instance:\n\n```javascript\n\"It's a stringy world.\"\n```\n\nMake a variable called `myString` with the string `\"My Great String\"`.",
       test: function(repl, cons) {
-        return cons.some(function(cLine) {
-          return cLine === "\"It's a stringify world.\"";
+        return repl.some(function(line) {
+          return line.type === "VariableDeclaration" && line.text === "myString = \"My Great String\"";
         });
       },
-      solution: "Right on!"
+      solution: "## Yeah, that's it."
+    }, {
+      problem: "You can also add strings together. Make another variable called `myOtherString` with the string `\"Another Great String\"`.\n\nThen add them together on the console:\n\n```javascript\nconsole.log(myString + myOtherString);\n```",
+      test: function(repl, cons) {
+        return (repl.some(function(line) {
+          return line.type === "VariableDeclaration" && line.text === "myOtherString = \"Another Great String\"";
+        })) && (cons.some(function(cLine) {
+          return cLine === "\"My Great StringAnother Great String\"";
+        }));
+      },
+      solution: "## Great!\n\nLet's move onto objects in the next lesson."
     }
   ]
 };
